@@ -8,5 +8,5 @@ Comandos básicos git:
 - git status (verifica se existem novas versões)
 - git log (verificar quais alterações)
 - git add . (prepara os arquivos)
-- git commit -m "breve comentário (pública a nova versão)
+- git commit -m "breve comentário" (pública a nova versão)
 - git push -u origin main (pública no github)
