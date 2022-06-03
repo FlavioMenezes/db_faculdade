@@ -72,10 +72,6 @@ CREATE TABLE IF NOT EXISTS turma (
 
 CREATE TABLE IF NOT EXISTS aluno (
 	RA INTEGER(4) AUTO_INCREMENT NOT NULL,
-    
-    fk_cod_curso INTEGER(4),
-    fk_cod_turma INTEGER(4),
-    fk_cod_endereco INTEGER(4),
     nome_aluno CHAR(20),
     sobrenome_aluno CHAR(20),
     CPF CHAR(11),
@@ -85,6 +81,9 @@ CREATE TABLE IF NOT EXISTS aluno (
     nome_mae CHAR(50),
     email CHAR(50),
     whatsapp CHAR(20),
+	fk_cod_curso INTEGER(4),
+    fk_cod_turma INTEGER(4),
+    fk_cod_endereco INTEGER(4),
     PRIMARY KEY(RA),
     FOREIGN KEY(fk_cod_curso) REFERENCES curso (cod_curso),
     FOREIGN KEY(fk_cod_turma) REFERENCES turma (cod_turma),
