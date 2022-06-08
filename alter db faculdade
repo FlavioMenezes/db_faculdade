@@ -45,3 +45,21 @@ MODIFY COLUMN fk_RA INTEGER(4) NOT NULL,
 MODIFY COLUMN fk_cod_disciplina INTEGER(4) NOT NULL,
 ADD CONSTRAINT PRIMARY KEY (fk_RA, fk_cod_disciplina);
 
+ALTER TABLE tipo_telefone
+CHANGE COLUMN tipo_felefone tipo_telefone CHAR(8);
+
+ALTER TABLE tipo_telefone
+MODIFY COLUMN tipo_telefone CHAR(11);
+
+ALTER TABLE departamento
+MODIFY COLUMN nome_departamento CHAR(21);
+
+ALTER TABLE professor
+MODIFY COLUMN sobrenome_professor CHAR(50) NOT NULL;
+
+ALTER TABLE curso
+MODIFY COLUMN nome_curso CHAR(22);
+
+ALTER TABLE disciplina
+MODIFY COLUMN nome_disciplina CHAR(30),
+MODIFY COLUMN descricao CHAR(60);
