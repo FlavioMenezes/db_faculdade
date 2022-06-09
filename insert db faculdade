@@ -1,5 +1,21 @@
 
+describe table curso_disciplina;
 
+select * from aluno;
+select * from historico;
+describe historico;
+
+INSERT INTO historico
+	(dt_inicio, dt_fim, fk_RA)
+VALUES
+
+INSERT INTO disciplina_historico
+	(fk_cod_historico, fk_cod_disciplina, nota, frequencia)
+VALUES
+
+INSERT INTO aluno_disciplina
+	(fk_RA, fk_cod_disciplina)
+VALUES
 
 /* PRONTAS */
 
@@ -87,7 +103,7 @@ VALUES
     (DEFAULT, 'Calculo Aplicado', '10', 'Aprendendo Calculo', '4', '2'),
     (DEFAULT, 'Teatro', '10', 'Arte de atuar', '2', '1')
 ;
-    SELECT * FROM departamento;
+    
 INSERT INTO professor
 	(cod_professor, nome_professor, sobrenome_professor, status, fk_cod_departamento)
 VALUES
@@ -258,3 +274,39 @@ VALUES
     (9, 29),
     (10, 30)
 ;
+
+INSERT INTO curso_disciplina
+	(fk_cod_curso, fk_cod_disciplina)
+VALUES
+	(2, 1),
+    (2, 2),
+    (3, 3),
+    (4, 4),
+    (8, 5),
+    (1, 6),
+    (2, 7),
+    (1, 8),
+    (6, 9),
+    (5, 10),
+    (4, 11),
+    (3, 12),
+	(2, 13),
+    (9, 14),
+    (1, 15),
+    (2, 16),
+    (3, 17),
+    (4, 18),
+	(5, 19),
+    (6, 20),
+    (6, 21),
+    (7, 22),
+    (8, 23),
+    (9, 24),
+    (2, 25),
+    (5, 26),
+    (4, 27),
+    (3, 28),
+    (2, 29),
+    (1, 30)
+;
+
