@@ -1,29 +1,9 @@
 
-select * from tipo_telefone;
-
-INSERT INTO telefone
-	(num_telefone, fk_cod_tipo)
-VALUES 
-	('984941211', 4),
-	('301201201', 5),
-    ('33000001', 6),
-    ('9452255221', 4),
-	('31225541', 5),
-    ('33114515', 6),
-    ('984912211', 4),
-	('33144355', 5),
-    ('41149873', 6),
-;
-
-INSERT INTO telefone_aluno
-	(fk_RA, fk_cod_telefone)
-VALUES
-	( );
 
 
 /* PRONTAS */
 
-INSERT INTO tipo_telefone 
+INSERT INTO tipo_telefone
 	(cod_tipo, tipo_telefone)
 VALUES
 	(DEFAULT, 'celular'),
@@ -76,45 +56,90 @@ VALUES
 INSERT INTO disciplina
 	(cod_disciplina, nome_disciplina, carga_horaria, descricao, num_alunos, fk_cod_departamento)
 VALUES 
-	(DEFAULT, 'Raciocinio Logico', '12', 'Disciplina que ensia raciocinio logico', '20', '7'),
-    (DEFAULT, 'Psicologia Cognitiva', '30', 'Disciplina que ensia psicologia', '15', '6'),
-    (DEFAULT, 'Eletronica Digital', '100', 'Disciplina que ensia eletronica', '19', '7'),
-    (DEFAULT, 'Programacao em C', '999', 'Disciplina que ensia a programar em c', '2', '10'),
-    (DEFAULT, 'Power BI', '92', 'Aprendendo Power BI', '5', '10'),
-    (DEFAULT, 'Java', '1000', 'Aprendendo Java', '1', '10'),
-    (DEFAULT, 'Introdução Banco de Dados', '200', 'Disciplina para aprender SQL', 'aluno10', '10'),
-    (DEFAULT, 'BD Intermediario', '200', 'Comandos avançados em SQL', '10', '10'),
-    (DEFAULT, 'BD Avançado', '200', 'Se tornando um DBA', '10', '10'),
-    (DEFAULT, 'Plantação Ecologica', '30', 'Disciplina para fazer uma mini orta', '12', '8'),
-    (DEFAULT, 'Postgre', '100', 'Disciplina para dominar o Postgree', '10', '10'),
-    (DEFAULT, 'PHP', '150', 'Disciplina que ensina a linguagem PHP', '12', '10'),
-    (DEFAULT, 'PMBOK Boas praticas', '50', 'Disciplina voltada para PMBOK', '3', '10'),
-    (DEFAULT, 'Linux', '40', 'Disciplina que ensina sobre Ubuntu Linux', '2', '10'),
-    (DEFAULT, 'Power Shell', '25', 'Disciplina que ensina a criar scripts', '1', '10'),
-    (DEFAULT, 'Introdução Hardware', '12', 'Disciplina que ensina sobre hardware', '7', '10'),
-    (DEFAULT, 'Historia do Brasil', '100', 'Disciplina que ensina sobre o Brasil.', '6', '6'),
-    (DEFAULT, 'Python', '200', 'Disciplina que ensina Python', '5', '10'),
-    (DEFAULT, 'Como arrumar estágio?', '20', 'Disciplina que ensina sobre os estagios', '4', '9'),
-    (DEFAULT, 'Biologia do serhumaninho', '50', 'Disciplina que ensina sobre os seres humanos pequenos', '3', '8'),
-    (DEFAULT, 'Ciencia dos Dados', '320', 'Disciplina que ensina ciencia de Dados', '2', '10'),
-    (DEFAULT, 'SGBD', '5', 'Disciplina teorica sobre SGBD', '6', '10'),
-    (DEFAULT, 'Seguranca da Informacao', '12', 'Disciplina que ensina sobre seguranca em TI', '5', '10'),
-    (DEFAULT, 'Arte Moderna Antiga', '30', 'Disciplina da arte moderna e antiga', '4', '6'),
-    (DEFAULT, 'Historia de Brasilia', '50', 'Disciplina para aprender sobre Brasília', '3', '6'),
-    (DEFAULT, 'Meditação', '90', 'Disciplina ensina a ter mais calma', '2', '6'),
-    (DEFAULT, 'Teoria de Kimball', '20', 'Disciplina ensinando Kimball', '2', '10'),
-    (DEFAULT, 'Eletricidade', '25', 'Eletricidade Basica', '1', '7'),
-    (DEFAULT, 'Calculo Aplicado', '10', 'Aprendendo Calculo', '4', '7'),
-    (DEFAULT, 'Teatro', '10', 'Arte de atuar', '2', '6')
+	(DEFAULT, 'Raciocinio Logico', '12', 'Disciplina que ensia raciocinio logico', '20', '2'),
+    (DEFAULT, 'Psicologia Cognitiva', '30', 'Disciplina que ensia psicologia', '15', '1'),
+    (DEFAULT, 'Eletronica Digital', '100', 'Disciplina que ensia eletronica', '19', '2'),
+    (DEFAULT, 'Programacao em C', '999', 'Disciplina que ensia a programar em c', '2', '5'),
+    (DEFAULT, 'Power BI', '92', 'Aprendendo Power BI', '5', '5'),
+    (DEFAULT, 'Java', '1000', 'Aprendendo Java', '1', '5'),
+    (DEFAULT, 'Introdução Banco de Dados', '200', 'Disciplina para aprender SQL', '10', '5'),
+    (DEFAULT, 'BD Intermediario', '200', 'Comandos avançados em SQL', '10', '5'),
+    (DEFAULT, 'BD Avançado', '200', 'Se tornando um DBA', '10', '5'),
+    (DEFAULT, 'Plantação Ecologica', '30', 'Disciplina para fazer uma mini orta', '12', '3'),
+    (DEFAULT, 'Postgre', '100', 'Disciplina para dominar o Postgree', '10', '5'),
+    (DEFAULT, 'PHP', '150', 'Disciplina que ensina a linguagem PHP', '12', '5'),
+    (DEFAULT, 'PMBOK Boas praticas', '50', 'Disciplina voltada para PMBOK', '3', '5'),
+    (DEFAULT, 'Linux', '40', 'Disciplina que ensina sobre Ubuntu Linux', '2', '5'),
+    (DEFAULT, 'Power Shell', '25', 'Disciplina que ensina a criar scripts', '1', '5'),
+    (DEFAULT, 'Introdução Hardware', '12', 'Disciplina que ensina sobre hardware', '7', '5'),
+    (DEFAULT, 'Historia do Brasil', '100', 'Disciplina que ensina sobre o Brasil.', '6', '2'),
+    (DEFAULT, 'Python', '200', 'Disciplina que ensina Python', '5', '5'),
+    (DEFAULT, 'Como arrumar estágio?', '20', 'Disciplina que ensina sobre os estagios', '4', '4'),
+    (DEFAULT, 'Biologia do serhumaninho', '50', 'Disciplina que ensina sobre os seres humanos pequenos', '3', '3'),
+    (DEFAULT, 'Ciencia dos Dados', '320', 'Disciplina que ensina ciencia de Dados', '2', '5'),
+    (DEFAULT, 'SGBD', '5', 'Disciplina teorica sobre SGBD', '6', '5'),
+    (DEFAULT, 'Seguranca da Informacao', '12', 'Disciplina que ensina sobre seguranca em TI', '5', '5'),
+    (DEFAULT, 'Arte Moderna Antiga', '30', 'Disciplina da arte moderna e antiga', '4', '1'),
+    (DEFAULT, 'Historia de Brasilia', '50', 'Disciplina para aprender sobre Brasília', '3', '1'),
+    (DEFAULT, 'Meditação', '90', 'Disciplina ensina a ter mais calma', '2', '1'),
+    (DEFAULT, 'Teoria de Kimball', '20', 'Disciplina ensinando Kimball', '2', '5'),
+    (DEFAULT, 'Eletricidade', '25', 'Eletricidade Basica', '1', '2'),
+    (DEFAULT, 'Calculo Aplicado', '10', 'Aprendendo Calculo', '4', '2'),
+    (DEFAULT, 'Teatro', '10', 'Arte de atuar', '2', '1')
+;
+    SELECT * FROM departamento;
+INSERT INTO professor
+	(cod_professor, nome_professor, sobrenome_professor, status, fk_cod_departamento)
+VALUES
+	(DEFAULT, 'Luciano', 'Jedi', 1, 5),
+    (DEFAULT, 'Marcelo', 'Forgado', 1, 2),
+    (DEFAULT, 'Priscila', 'Dracaris', 0, 2),
+    (DEFAULT, 'Marcela', 'Pontes', 1, 3),
+    (DEFAULT, 'Ricardo', 'Amorim', 1, 5),
+    (DEFAULT, 'Valeria', 'Norbis', 0, 4),
+    (DEFAULT, 'Fernando', 'Saitama', 1, 5),
+    (DEFAULT, 'Teles', 'Netero', 0, 4),
+    (DEFAULT, 'Wesley', 'Testa', 1, 1),
+    (DEFAULT, 'Renata', 'Kawasaki', 1, 3)
 ;
     
+INSERT INTO curso
+	(cod_curso, nome_curso, fk_cod_departamento)
+VALUES 
+	(DEFAULT, 'Engenharia de Software', '5'),
+    (DEFAULT, 'Analise de Sistema', '5'),
+    (DEFAULT, 'Biologia', '3'),
+    (DEFAULT, 'Historia', '4'),
+    (DEFAULT, 'Matematica', '2'),
+    (DEFAULT, 'Engenharia Eletrica', '2'),
+    (DEFAULT, 'Psicologia', '1'),
+	(DEFAULT, 'Artes', '1'),
+	(DEFAULT, 'Engenharia Espacial', '2'),
+	(DEFAULT, 'Ciencia de Dados', '5')
+;
+
+INSERT INTO turma
+	(fk_cod_curso, periodo, num_alunos, dt_inicio, dt_fim)
+VALUES
+	(1, 'Noturno', '8', '2022-01-01', '2025-03-15'),
+	(2, 'Integral', '28', '2022-01-01', '2025-03-15'),
+    (3, 'Manha', '12', '2022-02-21', '2025-03-15'),
+    (4, 'Tarde', '40', '2022-02-01', '2025-03-15'),
+    (5, 'Noite', '25', '2022-05-28', '2025-05-01'),
+    (6, 'Noite', '30', '2022-01-28', '2025-05-05'),
+    (7, 'Tarde', '19', '2022-01-28', '2023-03-12'),
+    (8, 'Manha', '20', '2022-12-28', '2023-12-25'),
+    (9, 'Integral', '15', '2022-11-28', '2027-01-01'),
+    (10, 'Tarde', '10', '2022-01-28', '2024-02-01')
+;
+
  INSERT INTO aluno 
 	(RA, nome_aluno, sobrenome_aluno, CPF, status, sexo, nome_pai, nome_mae, email, whatsapp, fk_cod_curso, fk_cod_turma, fk_cod_endereco)
 VALUES
 	(DEFAULT, 'Leticia', 'Marques', '12345678910', 1, 'F', 'Vitor Gabriel', 'Amanda Martinha', 'leticia@gmail.com', '6199998484', 10, 1, 14),
     (DEFAULT, 'Mateus', 'Fernande', '12345678911', 1, 'M', 'Cauê', 'Aninha', 'mateus@gmail.com', '1198456200', 8, 2, 15),
-    (DEFAULT, 'Emerson', 'Silva', '12345678912', 1, 'M', 'Lucas Gabriel', 'Sarah', 'emerson@hotmail.com', NULL, 5, 5, 19),
-    (DEFAULT, 'Artur', 'Souza', '12345678913', 0, 'M', 'Luiz Fernando', 'Isadora', 'artur@icloud.com', '2841563003', 7, 2, 18),
+    (DEFAULT, 'Emerson', 'Silva', '12345678912', 1, 'M', 'Lucas Gabriel', 'Sarah', 'emerson@hotmail.com', NULL, 10, 5, 19),
+    (DEFAULT, 'Artur', 'Souza', '12345678913', 0, 'M', 'Luiz Fernando', 'Isadora', 'artur@icloud.com', '2841563003', 2, 2, 18),
     (DEFAULT, 'Naruto', 'Uzumaki', '12345678914', 1, 'M', 'Luiz Otávio', 'Luiza Otavia', 'naruto@ninja.com', '6178523140', 4, 5, 17),
     (DEFAULT, 'Goku', 'Sayajin', '12345678915', 0, 'M', 'Alexandre', 'Livia', 'kakaroto@gmail.com', '6198523460', 3, 6, 16),
     (DEFAULT, 'Clarencio', 'Otimista', '12345678916', 1, 'M', 'Francisco', 'Melissa', 'clarencio_otimista@gmail.com', '6186542221', 2, 8, 16),
@@ -133,48 +158,103 @@ VALUES
     (DEFAULT, 'Flavio', 'Neiva', '12345678929', 0, 'M', 'Jossan', 'Sara', 'flavio@gmail.com', '6198883333', 10, 9, 1)
 ;
    
-    
-INSERT INTO professor
-	(cod_professor, nome_professor, sobrenome_professor, status, fk_cod_departamento)
-VALUES
-	(DEFAULT, 'Luciano', 'Jedi', 1, 10),
-    (DEFAULT, 'Marcelo', 'Forgado', 1, 6),
-    (DEFAULT, 'Priscila', 'Dracaris', 0, 6),
-    (DEFAULT, 'Marcela', 'Pontes', 1, 8),
-    (DEFAULT, 'Ricardo', 'Amorim', 1, 10),
-    (DEFAULT, 'Valeria', 'Norbis', 0, 9),
-    (DEFAULT, 'Fernando', 'Saitama', 1, 10),
-    (DEFAULT, 'Teles', 'Netero', 0, 9),
-    (DEFAULT, 'Wesley', 'Testa', 1, 6),
-    (DEFAULT, 'Renata', 'Kawasaki', 1, 8)
-;
-    
-INSERT INTO curso
-	(cod_curso, nome_curso, fk_cod_departamento)
+/* 2-1198456200
+12-62987412589
+13-61951951984
+14-6194847784
+18-6154547848 
+*/
+INSERT INTO telefone
+	(num_telefone, fk_cod_tipo)
 VALUES 
-	(DEFAULT, 'Engenharia de Software', '10'),
-    (DEFAULT, 'Analise de Sistema', '10'),
-    (DEFAULT, 'Biologia', '8'),
-    (DEFAULT, 'Historia', '9'),
-    (DEFAULT, 'Matematica', '7'),
-    (DEFAULT, 'Engenharia Eletrica', '7'),
-    (DEFAULT, 'Psicologia', '6'),
-	(DEFAULT, 'Artes', '6'),
-	(DEFAULT, 'Engenharia Espacial', '7'),
-	(DEFAULT, 'Ciencia de Dados', '10')
+	('1198456200', 1),
+    ('62987412589', 1),
+    ('61951951984', 1),
+    ('6194847784', 1),
+    ('6154547848', 1),
+	('984941211', 1),
+	('301201201', 2),
+    ('33000001', 3),
+    ('9452255221', 1),
+	('31225541', 2),
+    ('33114515', 3),
+    ('984912211', 1),
+	('33144355', 2),
+    ('41149873', 3),
+    ('34151254', 3),
+    ('719444541', 1),
+	('345645641', 2),
+    ('33461142', 3),
+    ('78999444', 1),
+	('33336666', 2),
+    ('222245654', 3),
+    ('10232121', 1),
+	('45456161', 2),
+    ('77784221', 3),
+    ('65465465', 3)
 ;
 
-INSERT INTO turma
-	(fk_cod_curso, periodo, num_alunos, dt_inicio, dt_fim)
+INSERT INTO telefone_aluno
+	(fk_RA, fk_cod_telefone)
 VALUES
-	(1, 'Noturno', '8', '2022-01-01', '2025-03-15'),
-	(2, 'Integral', '28', '2022-01-01', '2025-03-15'),
-    (3, 'Manha', '12', '2022-02-21', '2025-03-15'),
-    (4, 'Tarde', '40', '2022-02-01', '2025-03-15'),
-    (5, 'Noite', '25', '2022-05-28', '2025-05-01'),
-    (6, 'Noite', '30', '2022-01-28', '2025-05-05'),
-    (7, 'Tarde', '19', '2022-01-28', '2023-03-12'),
-    (8, 'Manha', '20', '2022-12-28', '2023-12-25'),
-    (9, 'Integral', '15', '2022-11-28', '2027-01-01'),
-    (10, 'Tarde', '10', '2022-01-28', '2024-02-01')
+	(2, 1),
+    (12, 2),
+    (13, 3),
+    (14, 4),
+    (18, 5),
+    (1, 6),
+    (1, 7),
+    (1, 8),
+    (5, 9),
+    (5, 10),
+    (5, 11),
+    (9, 12),
+	(9, 13),
+    (9, 14),
+    (4, 15),
+    (6, 16),
+    (7, 17),
+    (10, 18),
+	(15, 19),
+    (16, 20),
+    (16, 21),
+    (17, 22),
+    (18, 23),
+    (19, 24),
+    (20, 25)
+;
+
+INSERT INTO professor_disciplina
+	(fk_cod_professor, fk_cod_disciplina)
+VALUES
+	(7, 1),
+    (9, 2),
+    (1, 3),
+    (1, 4),
+    (2, 5),
+    (1, 6),
+    (1, 7),
+    (2, 8),
+    (4, 9),
+    (4, 10),
+    (5, 11),
+    (7, 12),
+    (9, 13),
+    (10, 14),
+    (10, 15),
+    (9, 16),
+    (7, 17),
+    (5, 18),
+    (4, 19),
+    (3, 20),
+    (2, 21),
+    (1, 22),
+    (1, 23),
+    (2, 24),
+    (3, 25),
+    (4, 26),
+    (5, 27),
+    (7, 28),
+    (9, 29),
+    (10, 30)
 ;
