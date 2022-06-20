@@ -1,0 +1,112 @@
+USE db_faculdade;
+
+SELECT A.RA, CONCAT(A.nome_aluno, " ",  A.sobrenome_aluno) AS Nome_Completo, C.nome_curso, T.periodo
+FROM aluno A
+INNER JOIN curso C ON A.fk_cod_curso = C.cod_curso
+INNER JOIN turma T ON A.fk_cod_turma = T.cod_turma
+ORDER BY nome_aluno;
+
+SELECT D.nome_disciplina, A.nome_aluno, DH.nota
+FROM disciplina D
+INNER JOIN disciplina_historico DH ON D.cod_disciplina = DH.fk_cod_disciplina
+INNER JOIN historico H ON H.cod_historico = DH.fk_cod_historico
+INNER JOIN aluno A ON A.RA = H.fk_RA
+WHERE RA = '1'
+ORDER BY DH.nota DESC;
+
+/*CORRECAO02 */
+SELECT A.RA, A.nome_aluno, A.sobrenome_aluno, D.nome_disciplina,  DH.nota
+FROM aluno A 
+JOIN aluno_disciplina AD ON AD.fk_RA = A.RA
+JOIN disciplina D ON AD.fk_cod_disciplina = D.cod_disciplina
+JOIN disciplina_historico DH ON DH.fk_cod_disciplina = D.cod_disciplina
+JOIN historico H ON H.fk_RA = A.RA
+WHERE RA = '1'
+ORDER BY DH.nota DESC;
+
+SELECT * FROM disciplina_historico WHERE fk_cod_historico = '1';
+SELECT * FROM aluno_disciplina WHERE fk_RA = '1';
+SELECT * FROM historico WHERE fk_RA = '1';
+
+SELECT P.nome_professor, P.sobrenome_professor, D.nome_disciplina, D.carga_horaria
+FROM professor P
+INNER JOIN professor_disciplina PD ON P.cod_professor = PD.fk_cod_professor
+INNER JOIN disciplina D ON D.cod_disciplina = PD.fk_cod_disciplina
+;
+
+
+SELECT A.RA, A.nome_aluno, A.sobrenome_aluno, A.CPF, A.status, A.sexo, A.nome_pai, A.nome_mae, A.email, A.whatsapp,
+CONCAT(TL.tipo_logradouro, " ", E.nome_rua, " ", E.numero_rua, " ", E.complemento) AS Endereco_Completo, E.CEP, 
+T.num_telefone,
+TT.tipo_telefone
+FROM aluno A
+INNER JOIN endereco E ON E.cod_endereco = A.fk_cod_endereco
+INNER JOIN tipo_logradouro TL ON TL.cod_tipo_logradouro = E.fk_cod_tipo_logradouro
+INNER JOIN telefone_aluno TA ON A.RA = TA.fk_RA
+INNER JOIN telefone T ON T.cod_telefone = TA.fk_cod_telefone
+INNER JOIN tipo_telefone TT ON TT.cod_tipo = T.fk_cod_tipo
+ORDER BY A.nome_aluno;
+
+SELECT D.nome_disciplina, DE.nome_departamento, C.nome_curso, P.nome_professor, P.sobrenome_professor
+FROM disciplina D
+INNER JOIN departamento DE ON DE.cod_departamento = D.fk_cod_departamento
+INNER JOIN curso C ON C.fk_cod_departamento = DE.cod_departamento
+INNER JOIN professor P ON P.fk_cod_departamento = DE.cod_departamento
+GROUP BY D.nome_disciplina
+ORDER BY D.nome_disciplina ASC;
+
+/* CORRECAO05 */
+SELECT D.nome_disciplina, DE.nome_departamento, C.nome_curso, P.nome_professor, P.sobrenome_professor
+FROM disciplina D
+INNER JOIN departamento DE ON D.fk_cod_departamento = DE.cod_departamento
+INNER JOIN curso_disciplina CD ON CD.fk_cod_disciplina = D.cod_disciplina
+INNER JOIN curso C ON CD.fk_cod_curso = C.cod_curso
+INNER JOIN professor_disciplina PD ON PD.fk_cod_disciplina = D.cod_disciplina
+INNER JOIN professor P ON PD.fk_cod_professor = P.cod_professor
+ORDER BY D.nome_disciplina;
+
+/* VIEWS */
+
+CREATE VIEW vw_alunoCurso AS
+SELECT A.RA, CONCAT(A.nome_aluno, " ",  A.sobrenome_aluno) AS Nome_Completo, C.nome_curso, T.periodo
+FROM aluno A
+INNER JOIN curso C ON A.fk_cod_curso = C.cod_curso
+INNER JOIN turma T ON A.fk_cod_turma = T.cod_turma
+ORDER BY A.nome_aluno;
+
+CREATE VIEW vw_notaAluno AS
+SELECT D.nome_disciplina, A.nome_aluno, DH.nota
+FROM disciplina D
+INNER JOIN disciplina_historico DH ON D.cod_disciplina = DH.fk_cod_disciplina
+INNER JOIN historico H ON H.cod_historico = DH.fk_cod_historico
+LEFT JOIN aluno A ON A.RA = H.fk_RA
+WHERE RA = '1'
+ORDER BY DH.nota DESC;
+
+CREATE VIEW vw_professorDisciplina AS
+SELECT P.nome_professor, P.sobrenome_professor, D.nome_disciplina, D.carga_horaria
+FROM professor P
+INNER JOIN professor_disciplina PD ON P.cod_professor = PD.fk_cod_professor
+INNER JOIN disciplina D ON D.cod_disciplina = PD.fk_cod_disciplina
+;
+
+CREATE VIEW vw_alunoCompleto AS
+SELECT A.RA, A.nome_aluno, A.sobrenome_aluno, A.CPF, A.status, A.sexo, A.nome_pai, A.nome_mae, A.email, A.whatsapp,
+CONCAT(TL.tipo_logradouro, " ", E.nome_rua, " ", E.numero_rua, " ", E.complemento) AS Endereco_Completo, E.CEP, 
+T.num_telefone,
+TT.tipo_telefone
+FROM aluno A
+INNER JOIN endereco E ON E.cod_endereco = A.fk_cod_endereco
+INNER JOIN tipo_logradouro TL ON TL.cod_tipo_logradouro = E.fk_cod_tipo_logradouro
+INNER JOIN telefone_aluno TA ON A.RA = TA.fk_RA
+INNER JOIN telefone T ON T.cod_telefone = TA.fk_cod_telefone
+INNER JOIN tipo_telefone TT ON TT.cod_tipo = T.fk_cod_tipo;
+
+CREATE VIEW vw_professorDepartamento AS
+SELECT D.nome_disciplina, DE.nome_departamento, C.nome_curso, P.nome_professor, P.sobrenome_professor
+FROM disciplina D
+INNER JOIN departamento DE ON DE.cod_departamento = D.fk_cod_departamento
+INNER JOIN curso C ON C.fk_cod_departamento = DE.cod_departamento
+INNER JOIN professor P ON P.fk_cod_departamento = DE.cod_departamento
+GROUP BY D.nome_disciplina
+ORDER BY D.nome_disciplina ASC;
